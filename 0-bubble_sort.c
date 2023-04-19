@@ -1,4 +1,4 @@
-#include "sorth.h"
+#include "sort.h"
 
 /**
  * bubble_sort - sorts an array of integers
@@ -12,13 +12,14 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	int i, ii, x = 1, t;
+	long unsigned int i;
+	int x = 1, t;
 
 	while (!(x == 0))
 	{
 		x = 0;
 
-		for (i = 0; i < size; i++)
+		for (i = 0; i < (size - 1); i++)
 		{
 			t = 0;
 
@@ -27,16 +28,7 @@ void bubble_sort(int *array, size_t size)
 				t = array[i];
 				array[i] = array[i + 1];
 				array[i + 1] = t;
-
-				for (ii = 0; ii <= size; ii++)
-				{
-					printf("%d", array[ii]);
-					if (ii < size)
-					{ printf(", "); }
-					else
-					{ printf("\n"); }
-				}
-
+				print_array(array, size);
 				x++;
 			}
 		}
