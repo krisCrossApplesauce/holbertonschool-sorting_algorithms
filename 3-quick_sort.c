@@ -1,5 +1,7 @@
 #include "sort.h"
 
+void quick_sorter(int *array, int lo, int hi, size_t size);
+
 /**
  * quick_sort - sorts an array of integers in ascending order
  * using the Quick sort algorithm
@@ -32,13 +34,13 @@ int partition(int *array, int lo, int hi, size_t size)
 {
 	int pivot = array[hi], i = lo - 1, ii, tmp = 0;
 
-	for (ii = low; ii < hi; ii++)
+	for (ii = lo; ii < hi; ii++)
 	{
-		if (array[j] < pivot)
+		if (array[ii] < pivot)
 		{
 			i++;
 
-			if (array[i] != array[j])
+			if (array[i] != array[ii])
 			{
 				tmp = array[i];
 				array[i] = array[ii];
